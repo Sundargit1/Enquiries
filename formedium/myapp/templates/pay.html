@@ -1,0 +1,30 @@
+{% extends 'fees.html' %}
+{% block body %}
+
+    <form>
+        {% csrf_token %}
+        <input type="hidden" id="member_id" value="{{ member.id }}"/>
+        <div class="container">
+        
+        <div class="mb-3">
+            <label>Fees Amount</label>
+            <input type="text" name="feesamount" id="feesamount" value="{{ member.feesamount }}" class="form-control"  onchange="updateDue()" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Fees Paid</label>
+            <input type="text" name="feespaid" id="feespaid" value="{{ member.feespaid }}" class="form-control"  onchange="updateDue()" required="required" autofocus/>
+        </div>
+        <div class="mb-3">
+            <label>Fees Due</label>
+            <input type="text" name="feesdue" id="feesdue" value="{{ member.feesdue }}" class="form-control"  onchange="updateDue()" required="required"/>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" id="payment" class="btn btn-success">Pay</button>
+        </div>
+    </div>
+    </form>
+
+    {% endblock %}   
+
+       

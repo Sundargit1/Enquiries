@@ -1,0 +1,40 @@
+{% extends 'billing.html' %}
+{% block body %}
+
+    <form>
+        {% csrf_token %}
+        <input type="hidden" id="member_id" value="{{ member.id }}"/>
+        <div class="container">
+        <div class="mb-3">
+            <label>S.No</label>
+            <input type="number" id="sno" value="{{ member.sno }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Date</label>
+            <input type="text" id="date" value="{{ member.date }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" id="fname" value="{{ member.fname }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>School Name</label>
+            <input type="email" id="school" value="{{ member.school }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Number</label>
+            <input type="text" id="phonenumber" value="{{ member.phonenumber }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Response</label>
+            <input type="text" id="response" value="{{ member.response }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <button type="submit" id="update" class="btn btn-warning">Update</button>
+        </div>
+    </div>
+    </form>
+
+    {% endblock %}   
+
+       

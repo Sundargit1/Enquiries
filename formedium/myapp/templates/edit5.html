@@ -1,0 +1,45 @@
+{% extends 'rtl.html' %}
+{% block body %}
+
+    <form>
+        {% csrf_token %}
+        <input type="hidden" id="member_id" value="{{ member.id }}"/>
+        <div class="container">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type="text" id="name" value="{{ member.name }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Course</label>
+            <input type="text" id="course" value="{{ member.course }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Gender</label>
+            <input type="text" id="gender" value="{{ member.gender }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Phone Number</label>
+            <input type="text" id="phonenumber" value="{{ member.phonenumber }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Join Date</label>
+            <input type="date" id="joindate" value="{{ member.joindate }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Response</label>
+            <input type="text" id="response" value="{{ member.response }}" class="form-control" required="required"/>
+        </div>
+        <div class="mb-3">
+            <label>Confirmation</label>
+            <input type="text" id="confirmation" value="{{ member.confirmation }}" class="form-control" required="required"/>
+        </div>
+        
+        <div class="mb-3">
+            <button type="submit" id="update" class="btn btn-warning">Update</button>
+        </div>
+    </div>
+    </form>
+
+    {% endblock %}   
+
+       
